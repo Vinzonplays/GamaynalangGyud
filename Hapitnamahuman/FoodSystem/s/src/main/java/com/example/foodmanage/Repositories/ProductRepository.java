@@ -45,8 +45,7 @@ public class ProductRepository {
         allProducts.add(new ProductItem("Puto Bumbong", 1.99, "Dessert", "puto bumbong.jpg", "31"));
         allProducts.add(new ProductItem("Cassava Cake", 1.99, "Dessert", "cassava cake.jpg", "32"));
         allProducts.add(new ProductItem("Buko Pandan Salad", 1.99, "Dessert", "buko pandan.jpg", "33"));
-        allProducts.add(new ProductItem("Buko Pandan Salad", 1.99, "Dessert", "buko pandan.jpg", "33"));
-        allProducts.add(new ProductItem("Buko Pandan Salad", 1.99, "Dessert", "buko pandan.jpg", "33"));
+
     }
 
     public List<ProductItem> getAllProducts() {

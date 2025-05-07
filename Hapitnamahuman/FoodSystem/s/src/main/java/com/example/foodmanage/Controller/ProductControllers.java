@@ -16,7 +16,7 @@ public class ProductControllers {
     @FXML private Spinner<Integer> onSpinner;
     @FXML private Button onAdd;
     @FXML private Label amountAdd;
-    @FXML private Label priceLabel; // Make sure to add this in your FXML
+    @FXML private Label priceLabel; // Optional, if used in FXML
 
     private ProductItem product;
 
@@ -25,18 +25,15 @@ public class ProductControllers {
         nameAdd.setText(productItem.getName());
         loadProductImage(productItem.getImagePath());
 
-        // Set price label
+        // Always show the original price only
         amountAdd.setText(String.format("₱%.2f", productItem.getPrice()));
 
         // Set spinner range (1 to 10) and default value (1)
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
         onSpinner.setValueFactory(valueFactory);
 
-        // Calculate initial amount
-        updateAmountLabel(1);
-
-        // Add listener for spinner changes
-        onSpinner.valueProperty().addListener((obs, oldVal, newVal) -> updateAmountLabel(newVal));
+        // Removed the listener that updated amount based on quantity
+        // onSpinner.valueProperty().addListener((obs, oldVal, newVal) -> updateAmountLabel(newVal));
     }
 
     private void loadProductImage(String imagePath) {
@@ -48,10 +45,13 @@ public class ProductControllers {
         }
     }
 
+    // This method is no longer needed unless you want to calculate total price later
+    /*
     private void updateAmountLabel(int quantity) {
         double amount = product.getPrice() * quantity;
-        amountAdd.setText(String.format(" ₱%.2f", amount));
+        amountAdd.setText(String.format("₱%.2f", amount));
     }
+    */
 
     public Button getAddButton() {
         return onAdd;
@@ -63,7 +63,10 @@ public class ProductControllers {
 
     @FXML
     private void handleAddButtonAction() {
-        System.out.println("Adding to order: " + product.getName() + " x" + getQuantity());
+        int quantity = getQuantity();
+        double total = product.getPrice() * quantity;
+        System.out.println("Adding to order: " + product.getName() + " x" + quantity + " = ₱" + total);
+        // Add to order logic here if needed
     }
 
     @FXML
