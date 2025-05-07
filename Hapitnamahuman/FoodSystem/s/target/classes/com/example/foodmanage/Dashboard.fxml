@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" prefHeight="911.0" prefWidth="1546.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodmanagement.Controller.DashController">
+
+    <top>
+        <HBox prefHeight="115.0" prefWidth="1040.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Food DashBoard">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <Button fx:id="si_BtnLogin" mnemonicParsing="false" onAction="#Login" prefHeight="51.0" prefWidth="163.0" text="Login">
+                    <HBox.margin>
+                        <Insets left="1100.0" top="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox prefHeight="770.0" prefWidth="122.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="si_Home" onAction="#onHome" prefHeight="91.0" prefWidth="131.0" text="Home" />
+                <Button fx:id="si_Menu" onAction="#onMenu" prefHeight="91.0" prefWidth="131.0" text="Menu">
+                    <VBox.margin><Insets top="10.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="si_Special" onAction="#onSpecial" prefHeight="91.0" prefWidth="131.0" text="Special Deal">
+                    <VBox.margin><Insets top="10.0" /></VBox.margin>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets left="10.0" top="30.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <FlowPane fx:id="productItems" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
+
+</BorderPane>

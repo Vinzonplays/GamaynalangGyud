@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodmanage.Controller.MenuController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="75.0" prefWidth="1090.0" spacing="10" style="-fx-background-color: #8705f2;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="si_Food" mnemonicParsing="false" onAction="#onFood" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: none; -fx-border-radius: 10; -fx-border-color: white;" text="FOOD" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="si_Drinks" mnemonicParsing="false" onAction="#onDrinks" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: none; -fx-border-color: white; -fx-border-radius: 10;" text="DRINKS" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="si_Coffee" mnemonicParsing="false" onAction="#onCoffee" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: noe; -fx-border-color: white; -fx-border-radius: 10;" text="COFFEE" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="si_Snack" mnemonicParsing="false" onAction="#onSnack" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: none; -fx-border-color: white; -fx-border-radius: 10;" text="SNACK" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="si_Desert" mnemonicParsing="false" onAction="#onDessert" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: none; -fx-border-color: white; -fx-border-radius: 10;" text="DESSERT" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <TextField fx:id="si_Search" prefHeight="36.0" prefWidth="259.0" promptText="Search" style="-fx-background-radius: 5;">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <right>
+        <VBox prefHeight="694.0" prefWidth="312.0" BorderPane.alignment="TOP_RIGHT">
+            <children>
+                <Label text="Order List">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <TableView fx:id="onTableview" prefHeight="498.0" prefWidth="312.0">
+                    <columns>
+                        <TableColumn fx:id="foodItemColumn" prefWidth="75.0" text="Item" />
+                        <TableColumn fx:id="foodQuantityColumn" prefWidth="75.0" text="Quantity" />
+                        <TableColumn fx:id="foodTotalColumn" prefWidth="75.0" text="Total" />
+                        <TableColumn fx:id="foodRemoveColumn" prefWidth="75.0" text="Remove" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <Label fx:id="onTotal" text="Total:">
+                    <font><Font name="Calibri Bold" size="25.0" /></font>
+                </Label>
+                <Label fx:id="orderStatusLabel" style="-fx-text-fill: green;" text="" />
+
+                <Button fx:id="si_Checkout" mnemonicParsing="false" prefHeight="46.0" prefWidth="187.0" style="-fx-background-color: #8705f2; -fx-background-radius: 10;" text="Checkout" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="45.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="si_Clear" mnemonicParsing="false" prefHeight="46.0" prefWidth="187.0" style="-fx-background-color: #8705f2; -fx-background-radius: 10;" text="Clear" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="45.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bodoni MT Bold" size="20.0" />
+               </font></Button>
+            </children>
+         <BorderPane.margin>
+            <Insets right="10.0" />
+         </BorderPane.margin>
+        </VBox>
+    </right>
+   <center>
+      <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+         <content>
+            <FlowPane fx:id="raatPane" prefHeight="696.0" prefWidth="1094.0" />
+         </content></ScrollPane>
+   </center>
+</BorderPane>
